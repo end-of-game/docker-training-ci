@@ -30,4 +30,5 @@ volumes:
   gitlab-conf:
   gitlab-log:
   gitlab-data:
+  jenkins:
 
