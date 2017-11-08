@@ -1,2 +1,6 @@
-# docker-training-ci
-Docker Training - CI exercise
+# Docker Training - CI exercise
+
+## Requirements
+
+- Docker
+- Docker Compose
