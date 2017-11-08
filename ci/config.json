@@ -1,0 +1,7 @@
+{
+        "auths": {
+                "nexus:8082": {
+                        "auth": "YWRtaW46YWRtaW4xMjM="
+                }
+        }
+}
