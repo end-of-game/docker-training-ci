@@ -79,7 +79,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<repository>nexus:8082/com.example/${project.artifactId}</repository>
+					<repository>nexus:8082/treeptik/${project.artifactId}</repository>
 					<contextDirectory>${project.build.directory}</contextDirectory>
 				</configuration>
 			</plugin>
