@@ -28,7 +28,7 @@ pipeline {
     stage('Deploy PrePROD') {
       steps {
         sh 'docker stop ci_PrePROD || true && docker rm -f ci_PrePROD || true'
-        sh 'docker run -d -p 8381:8080 --name ci_QA nexus:8082/treeptik/helloworld:latest'
+        sh 'docker run -d -p 8381:8080 --name ci_PrePROD nexus:8082/treeptik/helloworld:latest'
       }
     }
     stage('PrePROD Tests') {
@@ -38,8 +38,8 @@ pipeline {
     }
     stage('Deploy PROD') {
       steps {
-        sh 'docker stop ci_PrePROD || true && docker rm -f ci_PrePROD || true'
-        sh 'docker run -d -p 8382:8080 --name ci_QA nexus:8082/treeptik/helloworld:latest'
+        sh 'docker stop ci_PROD || true && docker rm -f ci_PROD || true'
+        sh 'docker run -d -p 8382:8080 --name ci_PROD nexus:8082/treeptik/helloworld:latest'
       }
     }
 	}
