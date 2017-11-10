@@ -16,7 +16,8 @@ pipeline {
 		}
     stage('Deploy QA') {
       steps {
-        sh 'docker run -d -p 8080:8080 nexus:8082/treeptik/helloworld:latest'
+        sh 'docker container rm -f ci_QA'
+        sh 'docker run -d -p --name ci_QA 8080:8080 nexus:8082/treeptik/helloworld:latest'
       }
     }
 	}
