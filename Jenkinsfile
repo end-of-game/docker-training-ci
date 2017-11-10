@@ -14,5 +14,10 @@ pipeline {
 				sh 'docker push nexus:8082/treeptik/helloworld'
 			}
 		}
+    stage('Deploy QA') {
+      step {
+        sh 'docker run -d -p 8080:8080 nexus:8082/treeptik/helloworld:latest'
+      }
+    }
 	}
 }
