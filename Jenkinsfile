@@ -15,7 +15,7 @@ pipeline {
 			}
 		}
     stage('Deploy QA') {
-      step {
+      steps {
         sh 'docker run -d -p 8080:8080 nexus:8082/treeptik/helloworld:latest'
       }
     }
