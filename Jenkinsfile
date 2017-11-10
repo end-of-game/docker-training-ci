@@ -14,11 +14,11 @@ pipeline {
 				sh 'docker push nexus:8082/treeptik/helloworld'
 			}
 		}
-    stage('Deploy QA') {
-      steps {
-        sh 'docker stop ci_QA || true && docker rm -f ci_QA || true'
-        sh 'docker run -d -p 8080:8080 --name ci_QA nexus:8082/treeptik/helloworld:latest'
-      }
-    }
+    		stage('Deploy QA') {
+			steps {
+				sh 'docker stop ci_QA || true && docker rm -f ci_QA || true'
+				sh 'docker run -d -p 8080:8080 --name ci_QA nexus:8082/treeptik/helloworld:latest'
+			}
+    		}
 	}
 }
